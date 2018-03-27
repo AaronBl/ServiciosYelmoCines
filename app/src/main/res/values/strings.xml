@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PracticaServicio</string>
+    
+    <string name="stage_api_yelmocines">http://stage-api-yelmocines.cinepolis.com.es/</string>
+    <string name="id_city">Id City</string>
+    <string name="movie_name">Name Movie:</string>
+    <string name="synopsis">Synopsis:</string>
+    <string name="horarios">Horarios:</string>
+    <string name="screen">Pantalla:</string>
+</resources>

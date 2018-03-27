@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_movie_horarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:text="@string/horarios"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_show_horarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Here is the horarios"
+            app:layout_constraintStart_toEndOf="@+id/tv_movie_horarios"
+            app:layout_constraintTop_toTopOf="@+id/tv_movie_horarios" />
+
+        <TextView
+            android:id="@+id/tv_movie_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:text="@string/screen"
+            app:layout_constraintStart_toStartOf="@+id/tv_movie_horarios"
+            app:layout_constraintTop_toBottomOf="@+id/tv_movie_horarios" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_show_screen"
+            app:layout_constraintStart_toEndOf="@+id/tv_movie_screen"
+            app:layout_constraintTop_toTopOf="@+id/tv_movie_screen"
+            android:layout_marginLeft="10dp"
+            android:text="Here is the screen"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
