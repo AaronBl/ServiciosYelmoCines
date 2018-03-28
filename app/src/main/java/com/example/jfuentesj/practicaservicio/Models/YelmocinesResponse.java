@@ -10,6 +10,8 @@ import java.util.List;
 
 public class YelmocinesResponse {
     private List<Movies> movies;
+    private List<Routes> routes;
+    private List<Schedules> schedules;
 
     public List<Movies> getMovies() {
         return movies;
@@ -17,6 +19,22 @@ public class YelmocinesResponse {
 
     public void setMovies(List<Movies> movies) {
         this.movies = movies;
+    }
+
+    public List<Routes> getRoutes() {
+        return routes;
+    }
+
+    public void setRoutes(List<Routes> routes) {
+        this.routes = routes;
+    }
+
+    public List<Schedules> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedules> schedules) {
+        this.schedules = schedules;
     }
 
     public class Movies {
@@ -144,7 +162,7 @@ public class YelmocinesResponse {
 
     public class Routes {
         private String code;
-        private List<Sizes> sizes;
+        private Object sizes;
 
         public class Sizes {
             private String large;
@@ -194,14 +212,13 @@ public class YelmocinesResponse {
             this.code = code;
         }
 
-        public List<Sizes> getSizes() {
+        public Object getSizes() {
             return sizes;
         }
 
-        public void setSizes(List<Sizes> sizes) {
+        public void setSizes(Object sizes) {
             this.sizes = sizes;
         }
-
     }
 
     public class Schedules {
@@ -232,7 +249,7 @@ public class YelmocinesResponse {
                     private String vistaId;
                     private String datetime;
                     private int screen;
-                    private List<String> settings;
+                    private Object settings;
                     @SerializedName("early_morning")
                     private boolean earlyMorning;
 
@@ -260,11 +277,11 @@ public class YelmocinesResponse {
                         this.screen = screen;
                     }
 
-                    public List<String> getSettings() {
+                    public Object getSettings() {
                         return settings;
                     }
 
-                    public void setSettings(List<String> settings) {
+                    public void setSettings(Object settings) {
                         this.settings = settings;
                     }
 

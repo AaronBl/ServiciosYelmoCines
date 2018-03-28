@@ -68,6 +68,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_id_city" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_show_horarios"
+                android:text="@string/horarios"
+                app:layout_constraintStart_toStartOf="@+id/tv_movie_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_name"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                />
+
+            <TextView
                 android:id="@+id/tv_movie_synopsis"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

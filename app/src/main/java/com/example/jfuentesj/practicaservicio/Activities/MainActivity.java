@@ -1,17 +1,20 @@
 package com.example.jfuentesj.practicaservicio.Activities;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jfuentesj.practicaservicio.Adapter.HorariosAdapter;
 import com.example.jfuentesj.practicaservicio.Models.YelmocinesResponse;
 import com.example.jfuentesj.practicaservicio.R;
 import com.example.jfuentesj.practicaservicio.Service.SporaService;
+import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,9 +23,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tvShowIdCity, tvShowMovieName, tvShowMovieSynopsis;
+    TextView tvShowIdCity, tvShowMovieName, tvShowMovieSynopsis,tvShowMovieHorarios;
+    ImageView ivPoster;
     Button btnBuscar;
 
+    Context context;
     RecyclerView rvConteiner;
     HorariosAdapter horariosAdapter;
     YelmocinesResponse yelmocinesResponse;
@@ -35,11 +40,14 @@ public class MainActivity extends AppCompatActivity {
         tvShowIdCity = findViewById(R.id.tv_id_city);
         tvShowMovieName = findViewById(R.id.tv_movie_name);
         tvShowMovieSynopsis = findViewById(R.id.tv_movie_synopsis);
+        tvShowMovieHorarios = findViewById(R.id.tv_movie_horarios);
+        ivPoster = findViewById(R.id.iv_poster);
+
         btnBuscar = findViewById(R.id.btn_buscar);
 
-        rvConteiner = findViewById(R.id.rv_contenedor);
+        /*rvConteiner = findViewById(R.id.rv_contenedor);
         rvConteiner.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        rvConteiner.hasFixedSize();
+        rvConteiner.hasFixedSize();*/
 
 
         YelmocinesCallRetrofitService();
@@ -62,7 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     tvShowMovieName.setText(yelmocinesResponse.getMovies().get(1).getName());
                     tvShowMovieSynopsis.setText(yelmocinesResponse.getMovies().get(1).getSynopsis());
 
-                    /*horariosAdapter = new HorariosAdapter(yelmocinesResponse.Schedules.Dates.Formats.Showtimes);
+                    //ivPoster.setImageResource(Picasso.with(context).load(yelmocinesResponse.Routes.Sizes));
+
+                    //tvShowMovieHorarios.setText(yelmocinesResponse.getSchedules().get(1).getDates().get(1).getDate());
+
+                    /*horariosAdapter = new HorariosAdapter(yelmocinesResponse.Schedules.Dates.Formats.Showtimes.class);
                     rvConteiner.setAdapter(horariosAdapter);
                     horariosAdapter.notifyDataSetChanged();*/
 
