@@ -6,68 +6,91 @@
     android:layout_height="match_parent"
     tools:context="com.example.jfuentesj.practicaservicio.Activities.MainActivity">
 
-    <EditText
-        android:id="@+id/et_city"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="serif"
-        android:text="32"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/iv_poster"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_id_city"
-        app:layout_constraintStart_toStartOf="@+id/tv_movie_name"
-        app:layout_constraintTop_toTopOf="@+id/et_city"
-        app:layout_constraintBottom_toBottomOf="@+id/et_city"
-        android:text="@string/id_city"
-        android:textSize="20dp"/>
-
-    <ImageView
-        android:id="@+id/iv_poster"
-        android:layout_width="110dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="10dp"
-        android:background="#4caff1"
-        app:layout_constraintStart_toStartOf="@+id/et_city"
-        app:layout_constraintTop_toBottomOf="@+id/et_city" />
-
-    <TextView
-        android:id="@+id/tv_movie_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="serif"
-        android:text="@string/movie_name"
-        app:layout_constraintStart_toEndOf="@+id/iv_poster"
-        app:layout_constraintTop_toTopOf="@+id/iv_poster" />
-
-    <TextView
-        android:id="@+id/tv_movie_synopsis"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="serif"
-        android:text="@string/synopsis"
-        app:layout_constraintStart_toEndOf="@+id/iv_poster"
-        app:layout_constraintTop_toBottomOf="@+id/tv_movie_name" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_contenedor"
+    <ScrollView
+        android:id="@+id/scrow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_poster">
+        android:layout_height="wrap_content">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/et_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="32"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/iv_poster"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_buscar"
+                android:text="@string/buscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/et_city"
+                app:layout_constraintBottom_toBottomOf="@+id/et_city"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_id_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/id_city"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/tv_movie_name"
+                app:layout_constraintTop_toTopOf="@+id/iv_poster" />
+
+            <ImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="110dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:background="#4caff1"
+                app:layout_constraintStart_toStartOf="@+id/et_city"
+                app:layout_constraintTop_toBottomOf="@+id/et_city" />
+
+            <TextView
+                android:id="@+id/tv_movie_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="@string/movie_name"
+                app:layout_constraintStart_toEndOf="@+id/iv_poster"
+                app:layout_constraintTop_toBottomOf="@+id/tv_id_city" />
+
+            <TextView
+                android:id="@+id/tv_movie_synopsis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="@string/synopsis"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_poster"
+                app:layout_constraintTop_toBottomOf="@+id/iv_poster" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_contenedor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_synopsis">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

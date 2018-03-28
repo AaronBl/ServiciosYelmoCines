@@ -22,11 +22,11 @@
 
 
         <TextView
-            android:id="@+id/tv_show_horarios"
+            android:id="@+id/tv_show_horario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Here is the horarios"
+            android:text="Here is the horario"
             app:layout_constraintStart_toEndOf="@+id/tv_movie_horarios"
             app:layout_constraintTop_toTopOf="@+id/tv_movie_horarios" />
 
