@@ -27,11 +27,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView ivPoster;
     Button btnBuscar;
 
-    Context context;
-    RecyclerView rvConteiner;
-    HorariosAdapter horariosAdapter;
-    YelmocinesResponse yelmocinesResponse;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +39,6 @@ public class MainActivity extends AppCompatActivity {
         ivPoster = findViewById(R.id.iv_poster);
 
         btnBuscar = findViewById(R.id.btn_buscar);
-
-        /*rvConteiner = findViewById(R.id.rv_contenedor);
-        rvConteiner.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-        rvConteiner.hasFixedSize();*/
-
 
         YelmocinesCallRetrofitService();
     }
@@ -64,19 +54,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<YelmocinesResponse> call, Response<YelmocinesResponse> response) {
                 if (response.isSuccessful()) {
+                    String url = response.body().getMovies().get(1).getMedia().get(0).getResource();
+                    String route = response.body().getRoutes().get(1).getSizes().getMedium();
+
+
                     YelmocinesResponse yelmocinesResponse = response.body();
 
                     tvShowIdCity.setText(String.valueOf(yelmocinesResponse.getMovies().get(1).getId()));
                     tvShowMovieName.setText(yelmocinesResponse.getMovies().get(1).getName());
                     tvShowMovieSynopsis.setText(yelmocinesResponse.getMovies().get(1).getSynopsis());
 
-                    //ivPoster.setImageResource(Picasso.with(context).load(yelmocinesResponse.Routes.Sizes));
+                    Picasso.get().load(route + "" + url).into(ivPoster);
 
-                    //tvShowMovieHorarios.setText(yelmocinesResponse.getSchedules().get(1).getDates().get(1).getDate());
-
-                    /*horariosAdapter = new HorariosAdapter(yelmocinesResponse.Schedules.Dates.Formats.Showtimes.class);
-                    rvConteiner.setAdapter(horariosAdapter);
-                    horariosAdapter.notifyDataSetChanged();*/
 
                 }
             }

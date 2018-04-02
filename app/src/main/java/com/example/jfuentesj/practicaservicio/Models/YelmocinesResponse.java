@@ -162,7 +162,7 @@ public class YelmocinesResponse {
 
     public class Routes {
         private String code;
-        private Object sizes;
+        private Sizes sizes;
 
         public class Sizes {
             private String large;
@@ -212,11 +212,11 @@ public class YelmocinesResponse {
             this.code = code;
         }
 
-        public Object getSizes() {
+        public Sizes getSizes() {
             return sizes;
         }
 
-        public void setSizes(Object sizes) {
+        public void setSizes(Sizes sizes) {
             this.sizes = sizes;
         }
     }
