@@ -50,16 +50,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<YelmocinesResponse> call, Response<YelmocinesResponse> response) {
                 if (response.isSuccessful()) {
-                    String url = response.body().getMovies().get(1).getMedia().get(0).getResource();
-                    String route = response.body().getRoutes().get(1).getSizes().getMedium();
-
                     YelmocinesResponse yelmocinesResponse = response.body();
+                    String url = yelmocinesResponse.getMovies().get(1).getMedia().get(0).getResource();
+                    String route = yelmocinesResponse.getRoutes().get(1).getSizes().getMedium();
+
+                    int sizeIdMovie = yelmocinesResponse.getSchedules().get(1).getMovieId();
 
                     tvShowIdCity.setText(String.valueOf(yelmocinesResponse.getMovies().get(1).getId()));
                     tvShowMovieName.setText(yelmocinesResponse.getMovies().get(1).getName());
                     tvShowMovieSynopsis.setText(yelmocinesResponse.getMovies().get(1).getSynopsis());
 
                     Picasso.get().load(route + "" + url).into(ivPoster);
+
+                    /*for (int i = 0; i<sizeIdMovie; i++){
+                        int movieIdResponse = response.body().getSchedules().get(i).getMovieId();
+                    }*/
 
                 }
             }
