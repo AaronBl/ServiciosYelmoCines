@@ -1,16 +1,12 @@
 package com.example.jfuentesj.practicaservicio.Activities;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.jfuentesj.practicaservicio.Adapter.HorariosAdapter;
 import com.example.jfuentesj.practicaservicio.Models.YelmocinesResponse;
 import com.example.jfuentesj.practicaservicio.R;
 import com.example.jfuentesj.practicaservicio.Service.SporaService;
@@ -57,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     String url = response.body().getMovies().get(1).getMedia().get(0).getResource();
                     String route = response.body().getRoutes().get(1).getSizes().getMedium();
 
-
                     YelmocinesResponse yelmocinesResponse = response.body();
 
                     tvShowIdCity.setText(String.valueOf(yelmocinesResponse.getMovies().get(1).getId()));
@@ -65,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                     tvShowMovieSynopsis.setText(yelmocinesResponse.getMovies().get(1).getSynopsis());
 
                     Picasso.get().load(route + "" + url).into(ivPoster);
-
 
                 }
             }
