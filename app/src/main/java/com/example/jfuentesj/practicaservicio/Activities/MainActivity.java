@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     /*for (int i = 0; i<sizeIdMovie; i++){
                         int movieIdResponse = response.body().getSchedules().get(i).getMovieId();
                     }*/
-
                 }
             }
 
